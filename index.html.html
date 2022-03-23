@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Frijole&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <title>AsiaGodTone Game</title>
+    <style>
+        body {
+            background: burlywood;
+            font-family: 'Freckle Face', cursive;
+            font-family: 'Frijole', cursive;
+            cursor: url('https://i.imgur.com/IO64xva.png')50 50, auto;
+        }
+
+
+
+        #container {
+            width: 850px;
+            height: 800px;
+            background: cadetblue;
+            margin: auto;
+            margin-top: 80px;
+            border-radius: 20px;
+            border: solid black 50px;
+            border-width: 1px 5px 2px 8px;
+            box-shadow: 3px 30px 50px black;
+            /* border-radius: 90% 90% 10% 90%/ 5% 50% 10% 55%; */
+            /* 做出傾斜的視覺感 */
+            /* transform: rotate(1deg); */
+        }
+
+        #title {
+            width: 850px;
+
+            margin: auto;
+            background: brown;
+
+            border-radius: 10px;
+        }
+
+        .nimate__animated,
+        .animate__heartBeat {
+            width: 750px;
+            height: 100px;
+            font-size: 45px;
+            color: cornsilk;
+            /* 文字置中 */
+            line-height: 100px;
+            text-align: center;
+        }
+
+
+        .logo {
+            width: 83px;
+            height: 70px;
+            display: inline-block;
+            margin: auto;
+            background-image: url("https://stickershop.line-scdn.net/sticonshop/v1/sticon/5f325988835232327f598344/iPhone/002.png");
+            background-size: cover;
+            margin-left: -30px;
+        }
+
+        #btn-start {
+            font-size: large;
+            font-family: 'Freckle Face', cursive;
+            font-family: 'Frijole', cursive;
+            color: rgb(228, 44, 44);
+            border-radius: 10px;
+            display: inline-block;
+            float: right;
+            margin-top: -40px;
+            margin-right: 5px;
+        }
+
+        #btn-start:hover {
+            font-size: large;
+            font-family: 'Freckle Face', cursive;
+            font-family: 'Frijole', cursive;
+            background-color: rgb(0, 0, 0);
+            color: rgb(246, 250, 31);
+        }
+
+        #text {
+            text-align: center;
+        }
+
+        .holes {
+
+            width: 250px;
+            height: 200px;
+            /* position: relative;
+            overflow: hidden;*/
+            float: left;
+        }
+
+
+        .red {
+            background: url("https://stickershop.line-scdn.net/sticonshop/v1/sticon/5f325988835232327f598344/iPhone/007.png") bottom center no-repeat;
+            /* 不用寫在body裡 電腦隨機挑*/
+        }
+
+        .blue {
+            background: url("https://stickershop.line-scdn.net/sticonshop/v1/sticon/5f325988835232327f598344/iPhone/004.png") bottom center no-repeat;
+        }
+
+        #game {
+            cursor: url('https://i.imgur.com/fEKd4Sg.png')50 50, auto;
+            width: 800px;
+            height: 550px;
+            margin: auto;
+            display: inline-block;
+        }
+
+
+        #game:active {
+            cursor: url('https://i.imgur.com/Ih1Lw53.png')50 50, auto;
+        }
+
+        #footer {
+            width: 850px;
+            height: 100px;
+            margin: auto;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            /* 文字置中 */
+            line-height: 100px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="title">
+            <div class="nimate__animated animate__heartBeat">ASIAGODTONE GAME
+                <div class="logo">
+
+                </div>
+
+
+            </div>
+            <input type="button" value="START!" id="btn-start">
+        </div>
+        <div id="text">
+            <span style="font-size: medium;">TIME:</span><span id="text-countdown"
+                style="font-size: x-large;">15</span><span style="font-size: medium;">s</span>&emsp;&emsp;
+            <SCORE: style="font-size: medium;">SCORE:</span><span id="text-score"
+                    style="font-size: x-large;"></span>&emsp;&emsp;
+                <span style="font-size: medium;">BEST PLAYER:&ensp;</span><span
+                    id="highscore-player">?</span>&emsp;&emsp;
+                <span style="font-size: medium;">BEST SCORE:&ensp;</span><span id="highscore-score">?</span>
+        </div>
+        <br>
+        <div id="game">
+            <div class="holes" id="hole7">
+                <div></div>
+            </div>
+            <div class="holes" id="hole8">
+                <div></div>
+            </div>
+            <div class="hole" id="hole9">
+                <div></div>
+            </div>
+            <div class="holes" id="hole4">
+                <div></div>
+            </div>
+            <div class="holes" id="hole5">
+                <div></div>
+            </div>
+            <div class="holes" id="hole6">
+                <div></div>
+            </div>
+            <div class="holes" id="hole1">
+                <div></div>
+            </div>
+            <div class="holes" id="hole2">
+                <div></div>
+            </div>
+            <div class="holes" id="hole3">
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer">
+        &copy;2021 Sharon You
+    </div>
+
+
+
+
+    <script>
+        const btnStart = document.getElementById('btn-start')
+        const holes = document.getElementsByClassName('holes')
+        const textScore = document.getElementById('text-score')
+        const textHighscorePlayer = document.getElementById('highscore-player')
+        const textHighscore = document.getElementById('highscore-score')
+        //倒數計時
+        const textCountdown = document.getElementById('text-countdown')
+
+
+        const audio = new Audio()
+        audio.src = './onlytoday.mp3'
+
+
+        let score = 0    //分數重設
+        let timer = 0
+        let countdown = 15 //倒數計時
+        let highscore = { name: '', score: 0 } //預設
+        const highStorage = JSON.parse(localStorage.getItem('asia'))
+        //最高分讀取↓
+        if (highStorage !== null) {
+            highscore = highStorage
+            textHighscorePlayer.innerText = highscore.name
+            textHighscore.innerText = highscore.score
+        }
+
+        btnStart.onclick = () => {
+            btnStart.disabled = true //點擊按鈕就不能再按了
+            score = 0 //分數重設
+            textScore.innerText = score //字重設
+
+            countdown = 15 //倒數計時
+            textCountdown.innerText = countdown
+
+            timer = setInterval(game, 800)
+            game()
+        }
+
+        const game = () => {
+            for (const hole of holes) {
+                hole.classList.remove('red')  //移除上一秒的紅色
+                hole.classList.remove('blue') //移除上一秒的藍色
+            }
+            for (let i = 0; i < 3; i++) {
+                const random = Math.floor(Math.random() * 9)
+                holes[random].classList.add('red')
+            }
+            countdown--
+            textCountdown.innerText = countdown
+            if (countdown <= 0) {
+                clearInterval(timer) //遊戲結束
+                alert(`太神辣~~~你得到 ${score} 分，777777`)
+                btnStart.disabled = false //啟用開始按鈕
+                for (const hole of holes) {
+                    hole.classList.remove('red')
+                    hole.classList.remove('blue')
+                }
+
+                if (score > highscore.score) {
+                    audio.play()
+                    highscore.score = score
+                    highscore.name = prompt(' 77777恭喜！請輸入名字')
+                    if (highscore.name === null || highscore.name.length === 0) {
+                        highscore.name = '7777'
+                    }
+                    textHighscorePlayer.innerText = highscore.name
+                    textHighscore.innerText = highscore.score
+                    localStorage.setItem('asia', JSON.stringify(highscore))
+                }
+            }
+        }
+
+        //點到紅色區塊後
+        for (const hole of holes) {
+            hole.onclick = () => {
+                if (hole.classList.contains('red')) {
+                    hole.classList.replace('red', 'blue')
+
+                    score++
+                    textScore.innerText = score
+                }
+            }
+        }
+
+        //鍵盤 event.code //https://keycode.info/
+        document.onkeydown = (event) => {
+            //isNaN是不是不是數字
+            if (!isNaN(event.key) && event.code.includes('Numpad')) {
+                const target = document.getElementById(`hole${event.key}`)
+                if (target !== null && target.classList.contains('red')) {
+                    target.classList.replace('red', 'blue')
+                    score++
+                    textScore.innerText = score
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
